@@ -6,10 +6,16 @@
 #include <math.h>
 
 class Matrix {
+protected:
+    uint64_t order_;
+
 public:
-    uint64_t n;
-    virtual bool readData(const std::string& file_path) = 0;
+    virtual bool readMatrixData(const std::string& file_path) = 0;
     virtual std::vector<double> operator*(const std::vector<double>& vector) const = 0;
     virtual ~Matrix() = default;
+
+    uint64_t getOrger() const {
+        return order_;
+    }
 };
 

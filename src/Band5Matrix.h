@@ -3,12 +3,12 @@
 
 class Band5Matrix : public Matrix {
 private:
-	uint64_t m;
-    std::vector<double> diagonal_el;
-	std::vector<double> secondary_el;
-	std::vector<double> second_secondary_el;
+	uint64_t second_side_dist_;
+    std::vector<double> data_;
+	std::vector<double> side_data_;
+	std::vector<double> second_side_data_;
 	
 public:
-    bool readData(const std::string& file_path) override;
+    bool readMatrixData(const std::string& file_path) override;
     std::vector<double> operator*(const std::vector<double>& vector_) const override;
 };
